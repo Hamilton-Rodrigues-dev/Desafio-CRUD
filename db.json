@@ -1,0 +1,95 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nome": "Mouse Gamer RGB",
+      "descricao": "Mouse com iluminação RGB e 6 botões programáveis",
+      "preco": 159.90,
+      "estoque": 12,
+      "categoria": "Periféricos",
+      "ativo": true
+    },
+    {
+      "id": 2,
+      "nome": "Teclado Mecânico ABNT2",
+      "descricao": "Teclado mecânico com layout ABNT2 e switches blue",
+      "preco": 299.99,
+      "estoque": 8,
+      "categoria": "Periféricos",
+      "ativo": true
+    },
+    {
+      "id": 3,
+      "nome": "Monitor 24\" Full HD",
+      "descricao": "Monitor LED 24 polegadas com resolução Full HD e HDMI",
+      "preco": 799.00,
+      "estoque": 5,
+      "categoria": "Monitores",
+      "ativo": true
+    },
+    {
+      "id": 4,
+      "nome": "Cadeira Gamer Reclinável",
+      "descricao": "Cadeira ergonômica com apoio lombar e braços ajustáveis",
+      "preco": 1250.00,
+      "estoque": 3,
+      "categoria": "Mobiliário",
+      "ativo": true
+    },
+    {
+      "id": 5,
+      "nome": "Webcam Full HD",
+      "descricao": "Webcam com microfone embutido e resolução 1080p",
+      "preco": 189.90,
+      "estoque": 15,
+      "categoria": "Acessórios",
+      "ativo": true
+    },
+    {
+      "id": 6,
+      "nome": "Headset Gamer 7.1",
+      "descricao": "Headset com som surround 7.1 e cancelamento de ruído",
+      "preco": 349.90,
+      "estoque": 10,
+      "categoria": "Áudio",
+      "ativo": true
+    },
+    {
+      "id": 7,
+      "nome": "Notebook Intel i5 8GB",
+      "descricao": "Notebook com processador Intel i5, 8GB RAM, SSD 256GB",
+      "preco": 3299.00,
+      "estoque": 7,
+      "categoria": "Computadores",
+      "ativo": true
+    },
+    {
+      "id": 8,
+      "nome": "HD Externo 1TB",
+      "descricao": "Disco rígido externo USB 3.0 com 1TB de capacidade",
+      "preco": 459.90,
+      "estoque": 20,
+      "categoria": "Armazenamento",
+      "ativo": true
+    },
+    {
+      "id": 9,
+      "nome": "Mousepad XL",
+      "descricao": "Mousepad de tamanho extra grande com base antiderrapante",
+      "preco": 59.90,
+      "estoque": 25,
+      "categoria": "Acessórios",
+      "ativo": true
+    },
+    {
+      "id": 10,
+      "nome": "Fonte 600W 80 Plus",
+      "descricao": "Fonte de alimentação 600W com certificação 80 Plus Bronze",
+      "preco": 289.00,
+      "estoque": 9,
+      "categoria": "Componentes",
+      "ativo": true
+    }
+  ]
+
+}
