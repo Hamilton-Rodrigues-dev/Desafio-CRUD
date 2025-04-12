@@ -1,0 +1,21 @@
+<ng-container [ngSwitch]="visaoAtual" >
+
+  <app-product-list
+    [productList]="productList"
+    *ngSwitchCase="visaoEnum.Lista"
+    >
+  </app-product-list>
+
+
+  <app-product-edit
+    [productList]="productList"
+    *ngSwitchCase="visaoEnum.Edicao"
+    >
+  </app-product-edit>
+
+  <app-product-view
+    [product]="productList"
+    *ngSwitchCase="visaoEnum.visualizacao"
+    >
+  </app-product-view>
+</ng-container>
