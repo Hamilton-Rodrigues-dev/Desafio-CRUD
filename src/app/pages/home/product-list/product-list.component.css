@@ -57,7 +57,7 @@
 .action-button {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0 8px 0;
+
 }
 
 .action-button_edit{
@@ -89,4 +89,14 @@
 .action-button_view:hover {
   cursor: pointer;
   background-color: rgb(40, 2, 58);
+}
+.action-button_new-product {
+  width: 1568px;
+  background-color: #ffff;
+  text-align: start;
+  border-color: #fff;
+  padding: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
 }
