@@ -7,10 +7,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent {
-@Input() product!: Product[];
+  @Input() productItem?: Product;
 
-@Output() edit = new EventEmitter<void>();
-@Output() view = new EventEmitter<void>();
+@Output() edit = new EventEmitter<number>();
+@Output() list = new EventEmitter<void>();
 ngOnInit(){
 
 }
