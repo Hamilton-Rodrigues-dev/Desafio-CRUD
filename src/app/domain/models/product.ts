@@ -3,9 +3,9 @@ export interface Product {
   nome: string;
   descricao: string;
   preco: number;
-  estoque: number;
-  categoria: string;
-  ativo: boolean;
+  estoque?: number;
+  categoria?: string;
+  ativo?: boolean;
 }
 
 export const productMock =
