@@ -4,13 +4,16 @@ import { HomeComponent } from './home.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [HomeComponent, ProductViewComponent, ProductListComponent,ProductEditComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+
   ],
   exports:[HomeComponent, ProductViewComponent, ProductListComponent, ProductEditComponent]
 })
