@@ -43,9 +43,12 @@
     </p>
    </li>
     <div class="action-button">
-      <button (click)="edit.emit()" class="action-button_edit">Editar</button>
-      <button (click)="view.emit()" class="action-button_view" >Visualizar</button>
+      <button (click)="edit.emit(product.id)" class="action-button_edit">Editar</button>
+      <button (click)="view.emit(product.id)" class="action-button_view" >Visualizar</button>
     </div>
     </ul>
+    <div class="action-button">
+      <button (click)="novoProduto.emit()" class="action-button_new-product" >+ Adicionar Novo produto</button>
+    </div>
   </main>
 </section>
