@@ -1,19 +1,21 @@
-<form class="container" >
+<form class="container" [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <header class="header" >
     <h2 class="header__title" >Editar Produto</h2>
   </header>
   <section class="product">
     <div class="product__info" >
       <h3 class="product__name">Nome do Produto</h3>
-      <input class="product__input" type="text">
+      <input class="product__input" type="text" formControlName="nome">
     </div>
     <div class="product__info">
       <h3 class="product__description">Descrição do Produto</h3>
-      <input class="product__input" type="text">
+      <input class="product__input" type="text"
+      formControlName="descricao">
     </div>
     <div class="product__info">
       <h3 class="product__price">Preço do Produto</h3>
-      <input class="product__input" type="text">
+      <input class="product__input" type="number"
+      formControlName="preco">
     </div>
     <div class="action-button">
       <button (click)="save.emit()"  class="action-button_save">Salvar</button>
