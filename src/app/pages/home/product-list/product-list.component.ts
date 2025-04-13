@@ -9,7 +9,8 @@ import { Product } from 'src/app/domain/models/product';
 export class ProductListComponent {
   @Input() productList!: Product[];
 
-  @Output() edit = new EventEmitter<void>();
-  @Output() view = new EventEmitter<void>();
-  
+  @Output() edit = new EventEmitter<number>();
+  @Output() view = new EventEmitter<number>();
+  @Output() novoProduto = new EventEmitter<void>();
+
 }
