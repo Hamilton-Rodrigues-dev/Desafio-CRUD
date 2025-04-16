@@ -1,69 +1,95 @@
 import { Component, inject, Input, EventEmitter } from '@angular/core';
 import { Product, productMock } from 'src/app/domain/models/product';
-import { HttpClient } from '@angular/common/http'
-import { find, pipe } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { find, max, pipe } from 'rxjs';
+import { FormGroup, NgForm } from '@angular/forms';
+import { ProductService } from 'src/app/shared/services/product.service';
 enum visaoHome {
   Lista,
   visualizacao,
   Edicao,
 }
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
   // @Input() productList!: Product[];
 
   // httpClient = inject(HttpClient);
-  productList: Product[] = productMock;
 
-  visaoEnum = visaoHome
-  visaoAtual = this.visaoEnum.Lista
+  productList: Product[] = [];
+
+  visaoEnum = visaoHome;
+  visaoAtual = this.visaoEnum.Lista;
 
   productItem?: Product;
 
+  constructor(private service: ProductService) {}
 
-
-
-  ngOnInit(){
+  ngOnInit() {
+    this.productList = this.service.getInfo();
     // this.httpClient.get<any>('/api/products').subscribe((products) => {
     //   this.productList = products;
     // });
-
   }
 
- obterIdProduct(id:number){
-  this.productItem = this.productList.find(product => product.id === id)
-}
-
-
-
-  trocarparaList(){
-    this.visaoAtual = this.visaoEnum.Lista
+  obterIdProduct(id: number) {
+    this.productItem = this.productList.find((product) => product.id === id);
   }
 
-  trocarparaView(id:number){
-    this.obterIdProduct(id)
-    this.visaoAtual = this.visaoEnum.visualizacao
+  trocarparaList() {
+    this.visaoAtual = this.visaoEnum.Lista;
   }
 
-  trocarparaEdit(id:number){
-    this.obterIdProduct(id)
-    this.visaoAtual = this.visaoEnum.Edicao
+  trocarparaView(id: number) {
+    this.obterIdProduct(id);
+    this.visaoAtual = this.visaoEnum.visualizacao;
   }
 
-  addNovoProduto(){
-    this.visaoAtual = this.visaoEnum.Edicao
+  trocarparaEdit(id: number) {
+    this.obterIdProduct(id);
+    this.visaoAtual = this.visaoEnum.Edicao;
   }
 
-
-
-  updateInformacoes(){
-
+  addNovoProduto() {
+    this.productItem = { id: 0, nome: '', descricao: '', preco: 0 };
+    this.visaoAtual = this.visaoEnum.Edicao;
   }
 
+  updateInformacoes(product: Product) {
+    if (product.id > 0) {
+      const indiceProduct = this.productList.findIndex(
+        (p) => p.id === product.id
+      );
+      this.productList[indiceProduct] = product;
 
+      console.log('o que ta vindo no indice', indiceProduct);
+      console.log('product', this.productList);
+      alert('Produto salvo com sucesso !');
+      this.trocarparaList();
+    } else {
+      const max = Math.max(...this.productList.map((p) => p.id));
+
+      product.id = max + 1;
+
+      console.log('o que o max ta retornando', max);
+
+      console.log('product', this.productList);
+
+      this.productList.push(product);
+
+      this.service.setProducts(this.productList);
+
+      alert('Produto novo cadastrado com sucesso !');
+      this.trocarparaList();
+    }
+
+    //buscar os produto e editar lista de produto
+    //Atualizar o item do produto para o produto novo
+    //atualizar pelo index/id ou retornar uma nova lista com o objeto atualziado
+    //validar o metodo
+  }
 }
