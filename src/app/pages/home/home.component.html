@@ -1,21 +1,19 @@
-<ng-container [ngSwitch]="visaoAtual" >
-
+<ng-container [ngSwitch]="visaoAtual">
   <app-product-list
     [productList]="productList"
     *ngSwitchCase="visaoEnum.Lista"
     (edit)="trocarparaEdit($event)"
     (view)="trocarparaView($event)"
     (novoProduto)="addNovoProduto()"
-    >
+  >
   </app-product-list>
-
 
   <app-product-edit
     [productItem]="productItem"
     *ngSwitchCase="visaoEnum.Edicao"
-    (save)="updateInformacoes()"
+    (save)="updateInformacoes($event)"
     (cancel)="trocarparaList()"
-    >
+  >
   </app-product-edit>
 
   <app-product-view
@@ -23,7 +21,6 @@
     *ngSwitchCase="visaoEnum.visualizacao"
     (edit)="trocarparaEdit($event)"
     (list)="trocarparaList()"
-    >
+  >
   </app-product-view>
-
 </ng-container>
