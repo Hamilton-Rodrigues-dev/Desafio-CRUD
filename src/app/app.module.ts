@@ -8,10 +8,14 @@ import { ProductViewComponent } from './pages/home/product-view/product-view.com
 import { ProductListComponent } from './pages/home/product-list/product-list.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductEditComponent } from './pages/home/product-edit/product-edit.component';
+import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    
+
 
 
   ],
@@ -19,9 +23,11 @@ import { ProductEditComponent } from './pages/home/product-edit/product-edit.com
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskDirective,
+     NgxMaskPipe
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
