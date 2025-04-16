@@ -1,25 +1,44 @@
 <form class="container" [formGroup]="productForm" (ngSubmit)="onSubmit()">
-  <header class="header" >
-    <h2 class="header__title" >Editar Produto</h2>
+  <header class="header">
+    <h2 class="header__title">Produto</h2>
   </header>
   <section class="product">
-    <div class="product__info" >
+    <div class="product__info">
       <h3 class="product__name">Nome do Produto</h3>
-      <input class="product__input" type="text" formControlName="nome">
+      <input
+        class="product__input"
+        type="text"
+        formControlName="nome"
+        placeholder="Digite o nome do produto "
+      />
     </div>
     <div class="product__info">
       <h3 class="product__description">Descrição do Produto</h3>
-      <input class="product__input" type="text"
-      formControlName="descricao">
+      <input
+        class="product__input"
+        type="text"
+        formControlName="descricao"
+        placeholder="Digite a descrição do produto"
+      />
     </div>
     <div class="product__info">
       <h3 class="product__price">Preço do Produto</h3>
-      <input class="product__input" type="number"
-      formControlName="preco">
+      <input
+        class="product__input"
+        type="text"
+        mask="000.00"
+        [prefix]="'R$'"
+        [showMaskTyped]="true"
+        [keepCharacterPositions]="true"
+        formControlName="preco"
+      />
     </div>
     <div class="action-button">
-      <button (click)="save.emit()"  class="action-button_save">Salvar</button>
-      <button (click)="cancel.emit()" class="action-button_cancel" >Cancelar</button>
+      <button type="submit" class="action-button_save">Salvar</button>
+      <button (click)="cancel.emit()" class="action-button_cancel">
+        Cancelar
+      </button>
     </div>
   </section>
 </form>
+<pre> {{ productItem?.preco | json }} </pre>
