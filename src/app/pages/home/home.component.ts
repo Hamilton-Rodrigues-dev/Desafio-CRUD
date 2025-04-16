@@ -36,8 +36,8 @@ export class HomeComponent {
     // });
   }
 
-  obterIdProduct(id: number) {
-    this.productItem = this.productList.find((product) => product.id === id);
+  obterProduct(id: number): Product | undefined {
+    return this.productList.find((product) => product.id === id);
   }
 
   trocarparaList() {
@@ -45,12 +45,12 @@ export class HomeComponent {
   }
 
   trocarparaView(id: number) {
-    this.obterIdProduct(id);
+    this.productItem = this.obterProduct(id);
     this.visaoAtual = this.visaoEnum.visualizacao;
   }
 
   trocarparaEdit(id: number) {
-    this.obterIdProduct(id);
+    this.productItem = this.obterProduct(id);
     this.visaoAtual = this.visaoEnum.Edicao;
   }
 
