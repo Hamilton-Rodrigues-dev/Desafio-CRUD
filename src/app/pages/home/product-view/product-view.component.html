@@ -1,50 +1,59 @@
 <section class="container">
-  <header class="header" >
-    <h1 class="header__title" >Produto Detalhado</h1>
+  <header class="header">
+    <h1 class="header__title">Produto Detalhado</h1>
   </header>
 
   <aside class="product-area">
     <figure class="product-area__img">
-      <img src="https://images5.kabum.com.br/produtos/fotos/94555/mouse-gamer-redragon-cobra-chroma-rgb-10000dpi-7-botoes-preto-m711-v2_1742821619_g.jpg" alt="">
+      <img [src]="productItem?.img" alt="" />
     </figure>
   </aside>
 
   <main>
     <article class="product">
-     <div class="product_info">
-      <h3>Nome do produto</h3>
-      <p class="product-info__name">
-        {{ productItem?.nome }}</p>
-     </div>
+      <div class="product_info">
+        <h3>Nome do produto</h3>
+        <p class="product-info__name">
+          {{ productItem?.nome }}
+        </p>
+      </div>
 
       <div class="product_info">
         <h3>Descrição do Produto</h3>
         <p class="product-info__description">
-          {{  productItem?.descricao }}</p>
+          {{ productItem?.descricao }}
+        </p>
       </div>
 
       <div class="product_info">
         <h3>Caregoria do Produto</h3>
         <p class="product-info__category">
-        {{  productItem?.categoria}}</p>
+          {{ productItem?.categoria }}
+        </p>
       </div>
 
       <div class="product_info">
         <h3>Quantidade no Estoque</h3>
         <p class="product-info__stock">
-          {{ productItem?.estoque }}</p>
+          {{ productItem?.estoque }}
+        </p>
       </div>
 
       <div class="product_info">
         <h3>Preço do produto</h3>
         <p class="product-info__price">
-          {{  productItem?.preco }}</p>
+          {{ productItem?.preco }}
+        </p>
       </div>
 
-        <div class="action-button">
-          <button (click)="edit.emit(productItem?.id)" class="action-button_edit">Editar produto</button>
-          <button (click)="list.emit()" class="action-button_view" >Visualizar lista de Produtos</button>
-        </div>
+      <div class="action-button">
+        <button (click)="edit.emit(productItem?.id)" class="action-button_edit">
+          Editar produto
+        </button>
+        <button (click)="list.emit()" class="action-button_view">
+          Visualizar lista de Produtos
+        </button>
+      </div>
     </article>
   </main>
 </section>
