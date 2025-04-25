@@ -10,24 +10,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductEditComponent } from './pages/home/product-edit/product-edit.component';
 import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-
-
-
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     HttpClientModule,
     NgxMaskDirective,
-     NgxMaskPipe
+    NgxMaskPipe,
+    AppRoutingModule,
   ],
   providers: [provideNgxMask()],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

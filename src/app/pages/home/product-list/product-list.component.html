@@ -2,53 +2,56 @@
   <header class="header">
     <h1 class="header__title">Lista de Produtos</h1>
     <ul class="header header__list">
-      <li>
-        <p class="header_name">Nome do produto</p>
+      <li class="header_name">
+        <p>Nome do produto</p>
       </li>
-      <li>
-        <p class="header_description">Descricao do Produto</p>
+      <li class="header_description">
+        <p>Descricao do Produto</p>
       </li>
-      <li>
-        <p class="header_price">Preço do Produto</p>
+      <li class="header_price">
+        <p>Preço do Produto</p>
       </li>
-      <li>
-        <p class="header_price">Quantidade no Estoque</p>
+      <li class="header_stock">
+        <p>Quantidade no Estoque</p>
       </li>
-      <li>
-        <p class="header_price">Categoria</p>
+      <li class="header_category">
+        <p>Categoria</p>
       </li>
-      <li>
-        <p class="header_action">Opções de botões</p>
+      <li class="header_action">
+        <p>Opções de botões</p>
       </li>
     </ul>
   </header>
   <main class="product-list">
-    <ul class="product-list__product" *ngFor="let product of productList; let index = index ">
-      <li>
-        <p class="product-list__name">
+    <ul
+      class="product-list__product"
+      *ngFor="let product of productList; let index = index"
+    >
+      <li class="product-list__name">
+        <p>
           {{ product.nome }}
         </p>
       </li>
-      <li>
-        <p class="product-list__description">
+      <li class="product-list__description">
+        <p>
           {{ product.descricao }}
         </p>
       </li>
-      <li>
-        <p class="product-list__price">
+      <li class="product-list__price">
+        <p>
           {{ product.preco.toLocaleString('pt-br',{
       style: 'currency',
       currency: 'BRL',
     }) }}
         </p>
       </li>
-      <li>
-        <p class="product-list__stoke">
+      <li class="product-list__stoke">
+        <p>
           {{ product.estoque }}
         </p>
       </li>
-      <li>
-        <p class="product-list__category">
+      <li class="product-list__category">
+        <p>
           {{ product.categoria }}
         </p>
       </li>
@@ -58,6 +61,9 @@
         </button>
         <button (click)="view.emit(product.id)" class="action-button_view">
           Visualizar
+        </button>
+        <button (click)="delete.emit(product.id)" class="action-button_remove">
+          Deletar
         </button>
       </div>
     </ul>

@@ -59,7 +59,7 @@ export class HomeComponent {
     this.visaoAtual = this.visaoEnum.Edicao;
   }
 
-  updateInformacoes(product: Product) {
+  onUpdateInformacoes(product: Product) {
     if (product.id > 0) {
       const indiceProduct = this.productList.findIndex(
         (p) => p.id === product.id
@@ -86,10 +86,18 @@ export class HomeComponent {
       alert('Produto novo cadastrado com sucesso !');
       this.trocarparaList();
     }
-
     //buscar os produto e editar lista de produto
     //Atualizar o item do produto para o produto novo
     //atualizar pelo index/id ou retornar uma nova lista com o objeto atualziado
     //validar o metodo
+  }
+  onRemoveProduct(id: number) {
+    if (id > 0) {
+      const indiceProduct = this.productList.findIndex((p) => p.id === id);
+      if (indiceProduct > -1) {
+        this.productList.splice(indiceProduct, 1);
+        this.service.deleteProduct(id);
+      }
+    }
   }
 }

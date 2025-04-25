@@ -5,13 +5,14 @@
     (edit)="trocarparaEdit($event)"
     (view)="trocarparaView($event)"
     (novoProduto)="addNovoProduto()"
+    (delete)="onRemoveProduct($event)"
   >
   </app-product-list>
 
   <app-product-edit
     [productItem]="productItem"
     *ngSwitchCase="visaoEnum.Edicao"
-    (save)="updateInformacoes($event)"
+    (save)="onUpdateInformacoes($event)"
     (cancel)="trocarparaList()"
   >
   </app-product-edit>

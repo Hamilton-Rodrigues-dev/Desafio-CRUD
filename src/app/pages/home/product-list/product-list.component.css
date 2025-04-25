@@ -21,13 +21,15 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 38px;
-  padding: 16px;
+  padding: 16px 0 16px 16px;
   justify-items: flex-start;
-  max-width: 1520px;
+  max-width: 100%;
   font-weight: 600;
+  font-size: 22px;
 }
-
+.header__list .header_price {
+  justify-items: center;
+}
 .product-list__product {
   list-style-type: none;
   display: grid;
@@ -52,9 +54,20 @@
   font-size: 16px;
 }
 
+.product-list__product .product-list__price {
+  justify-items: center;
+}
+
+.product-list__product .product-list__stoke {
+  justify-items: center;
+}
+.product-list__product .product-list__category {
+  justify-items: center;
+}
+
 .action-button {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .action-button_edit {
@@ -70,6 +83,15 @@
 .action-button_view {
   margin: 0 8px 0;
   background-color: rgb(147, 14, 209);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 8px;
+}
+.action-button_remove {
+  margin: 0 8px 0;
+  background-color: rgb(209, 14, 14);
   color: #fff;
   font-weight: 600;
   font-size: 14px;

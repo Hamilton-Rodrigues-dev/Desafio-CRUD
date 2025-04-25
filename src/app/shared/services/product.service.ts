@@ -26,6 +26,20 @@ export class ProductService {
     return dadosObject;
   }
 
+  deleteProduct(id: number): void {
+    const currentProducts = sessionStorage.getItem('products');
+    if (currentProducts) {
+      const products: Product[] = JSON.parse(currentProducts);
+
+      const updatedProducts = products.filter((p) => p.id !== id);
+
+      sessionStorage.removeItem('products');
+
+      if (updatedProducts.length > 0) {
+        sessionStorage.setItem('products', JSON.stringify(updatedProducts));
+      }
+    }
+  }
   salvarProduct(product: Product): void {
     const alteracao = sessionStorage.setItem(
       'products',
